@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillProject | Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #f6fbff;
+      --card: #ffffff;
+      --accent: #0b6efd;
+      --muted: #6b7280;
+      --radius: 14px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f4f6f9;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #172554;
+      line-height: 1.4;
+    }
+
+    /* ----------- SkillProject Header ----------- */
+    header {
+      background: linear-gradient(90deg,#005bbb,#003f7d);
+      color: white;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    header h1 { margin-bottom: 5px; font-size: 30px; }
+
+    /* ----------- Navigation ----------- */
+    nav.skill-nav {
+      display:flex;
+      justify-content:center;
+      gap:18px;
+      background:#023a75;
+      padding:10px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav.skill-nav a {
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      padding:6px 10px;
+      border-radius:6px;
+      transition:0.2s;
+    }
+
+    nav.skill-nav a:hover {
+      background:rgba(255,255,255,0.15);
+      transform:translateY(-2px);
+    }
+
+    /* ----------- Contact Container ----------- */
+    .contact-wrapper {
+      width:100%;
+      max-width:480px;
+      margin: 40px auto;
+      padding:16px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      padding: 20px 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      border-left: 4px solid var(--accent);
+    }
+
+    .contact-header h2 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .contact-header p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 1px solid #ccd7e6;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(0,102,255,0.18);
+      outline: none;
+    }
+
+    textarea { min-height: 120px; resize: vertical; }
+
+    .btn {
+      margin-top: 6px;
+      padding: 10px 0;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #084ec1;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(15,23,42,0.16);
+    }
+
+    /* ----------- Footer ----------- */
+    footer {
+      text-align:center;
+      margin-top:30px;
+      padding:14px 10px;
+      background: linear-gradient(90deg,#003f7d,#005bbb);
+      color:white;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SKILLPROJECT HEADER -->
+  <header>
+    <h1>SkillProject</h1>
+    <p>Quality, skill-based learning — practical courses for every student</p>
+  </header>
+
+  <!-- SKILLPROJECT NAVIGATION -->
+  <nav class="skill-nav">
+    <a href="microhome.html">Home</a>
+    <a href="microcourses.html">Courses</a>
+    <a href="microachievements.html">Achievements</a>
+    <a href="SDG 4_1.html">About</a>
+    <a href="MICRO contact 1.html">Contact</a>
+  </nav>
+
+  <!-- CONTACT FORM SECTION -->
+  <div class="contact-wrapper">
+    <div class="contact-card">
+      <div class="contact-header">
+        <h2>Send us a message</h2>
+        <p>Have a project or question? Type your message below.</p>
+      </div>
+
+      <form onsubmit="return handleSubmit(event)">
+        <div>
+          <label>Your name</label>
+          <input id="name" type="text" placeholder="Full name" required>
+        </div>
+
+        <div>
+          <label>Your email</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+
+        <div>
+          <label>Message</label>
+          <textarea id="message" placeholder="Type your message here..." required></textarea>
+        </div>
+
+        <button class="btn">Submit</button>
+      </form>
+
+    </div>
+  </div>
+
+  
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      alert("Thanks for your response!");
+      e.target.reset();
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <footer>
+         <h2>TEAM</h2>
+  <div class="TEAM">
+    <div class="card">
+      <h3>FYCM3 29,30,31,32</h3>
+    © 2025 SkillProject | Made by • Jay •Shubham  • Druman • Krish 
+  </footer>
+
+
+</body>
+</html>

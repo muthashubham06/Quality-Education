@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>SkillProject | Simple Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f3f5fb;
+    }
+
+    header {
+      background: linear-gradient(90deg, #005bbb, #003f7d);
+      color: white;
+      text-align: center;
+      padding: 16px 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+    header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      opacity: 0.95;
+    }
+
+    .wrapper {
+      max-width: 400px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px 18px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .wrapper h2 {
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccd4e0;
+      box-sizing: border-box;
+    }
+
+    input:focus {
+      border-color: #2b7cff;
+      outline: none;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    .error {
+      font-size: 13px;
+      color: #d9534f;
+      margin-top: 4px;
+    }
+
+    .success {
+      font-size: 13px;
+      color: #28a745;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
+      border: none;
+      background: #2b7cff;
+      color: white;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    button:hover {
+      background: #1f5fd1;
+    }
+
+    button:disabled {
+      background: #a0c4ff;
+      cursor: not-allowed;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SkillProject</h1>
+    <p>Quality, skill-based learning — practical courses for every student</p>
+  </header>
+
+  <div class="wrapper">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <div class="field">
+        <label for="name">Full name</label>
+        <input type="text" id="name" placeholder="Your full name" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="At least 8 characters" required />
+        <div class="hint">Password should be at least 8 characters long.</div>
+      </div>
+
+      <div class="field">
+        <label for="confirm">Confirm password</label>
+        <input type="password" id="confirm" placeholder="Re-type password" required />
+      </div>
+
+      <div id="errorMsg" class="error"></div>
+      <div id="successMsg" class="success"></div>
+
+      <button type="submit" id="submitBtn">Create account</button>
+    </form>
+
+    <p class="note">Already have an account? <a href="#">Log in</a></p>
+  </div>
+
+  <script>
+    const form = document.getElementById("signupForm");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const confirmInput = document.getElementById("confirm");
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+    const submitBtn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      errorMsg.textContent = "";
+      successMsg.textContent = "";
+
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
+      const confirm = confirmInput.value;
+
+      if (!name || !email || !password || !confirm) {
+        errorMsg.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        errorMsg.textContent = "Please enter a valid email address.";
+        return;
+      }
+
+      if (password.length < 8) {
+        errorMsg.textContent = "Password must be at least 8 characters long.";
+        return;
+      }
+
+      if (password !== confirm) {
+        errorMsg.textContent = "Passwords do not match.";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Creating account...";
+      successMsg.textContent = "Account created successfully! Redirecting...";
+
+      setTimeout(function () {
+        // CHANGE THIS to your main page filename (if in same folder)
+        // OR use full URL if hosted online
+        window.open("C:\Users\Asus\Downloads\Project\SkillProject _ Simple Sign Up.html", "_self");;
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>
